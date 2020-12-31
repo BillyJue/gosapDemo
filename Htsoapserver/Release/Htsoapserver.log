@@ -1,0 +1,24 @@
+﻿生成启动时间为 2020/11/18 17:28:22。
+     1>项目“C:\Users\ZBL\Desktop\Htsoapserver\Htsoapserver\Htsoapserver.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\Soft\VS2013\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp soapC.cpp soapServer.cpp stdsoap2.cpp
+         main.cpp
+     1>main.cpp(98): warning C4101: “str”: 未引用的局部变量
+         soapC.cpp
+         soapServer.cpp
+         stdsoap2.cpp
+     1>stdsoap2.cpp(16622): warning C4056: 浮点常量算术溢出
+     1>stdsoap2.cpp(16833): warning C4056: 浮点常量算术溢出
+       Link:
+         D:\Soft\VS2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\ZBL\Desktop\Htsoapserver\Release\Htsoapserver.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\ZBL\Desktop\Htsoapserver\Release\Htsoapserver.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\ZBL\Desktop\Htsoapserver\Release\Htsoapserver.lib" /MACHINE:X86 /SAFESEH Release\main.obj
+         Release\soapC.obj
+         Release\soapServer.obj
+         Release\stdsoap2.obj
+         正在生成代码
+         已完成代码的生成
+         Htsoapserver.vcxproj -> C:\Users\ZBL\Desktop\Htsoapserver\Release\Htsoapserver.exe
+     1>已完成生成项目“C:\Users\ZBL\Desktop\Htsoapserver\Htsoapserver\Htsoapserver.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:06.14

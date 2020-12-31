@@ -1,0 +1,30 @@
+﻿生成启动时间为 2020/11/23 10:08:47。
+     1>项目“C:\Users\ZBL\Desktop\Htsoapserver\HtSoapClient\HtSoapClient.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\Soft\VS2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ifChengDao.cpp main.cpp soapC.cpp soapClient.cpp stdsoap2.cpp
+         stdsoap2.cpp
+     1>c:\users\zbl\desktop\htsoapserver\htsoapclient\stdsoap2.cpp(16675): warning C4056: 浮点常量算术溢出
+     1>c:\users\zbl\desktop\htsoapserver\htsoapclient\stdsoap2.cpp(16886): warning C4056: 浮点常量算术溢出
+         soapClient.cpp
+         soapC.cpp
+         main.cpp
+         ifChengDao.cpp
+         正在生成代码...
+     1>c:\users\zbl\desktop\htsoapserver\htsoapclient\stdsoap2.cpp(16667): warning C4756: 常量算法中溢出
+     1>c:\users\zbl\desktop\htsoapserver\htsoapclient\stdsoap2.cpp(16671): warning C4756: 常量算法中溢出
+     1>c:\users\zbl\desktop\htsoapserver\htsoapclient\stdsoap2.cpp(16675): warning C4756: 常量算法中溢出
+     1>c:\users\zbl\desktop\htsoapserver\htsoapclient\stdsoap2.cpp(16667): warning C4756: 常量算法中溢出
+     1>c:\users\zbl\desktop\htsoapserver\htsoapclient\stdsoap2.cpp(16675): warning C4756: 常量算法中溢出
+       Link:
+         D:\Soft\VS2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\ZBL\Desktop\Htsoapserver\Debug\HtSoapClient.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\ZBL\Desktop\Htsoapserver\Debug\HtSoapClient.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\ZBL\Desktop\Htsoapserver\Debug\HtSoapClient.lib" /MACHINE:X86 Debug\ifChengDao.obj
+         Debug\main.obj
+         Debug\soapC.obj
+         Debug\soapClient.obj
+         Debug\stdsoap2.obj
+            正在创建库 C:\Users\ZBL\Desktop\Htsoapserver\Debug\HtSoapClient.lib 和对象 C:\Users\ZBL\Desktop\Htsoapserver\Debug\HtSoapClient.exp
+         HtSoapClient.vcxproj -> C:\Users\ZBL\Desktop\Htsoapserver\Debug\HtSoapClient.exe
+     1>已完成生成项目“C:\Users\ZBL\Desktop\Htsoapserver\HtSoapClient\HtSoapClient.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:04.66

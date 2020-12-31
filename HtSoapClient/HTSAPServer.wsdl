@@ -1,0 +1,957 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:tns="http://server.cdt.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	targetNamespace="http://server.cdt.com">
+	<types>
+		<xs:schema xmlns:tns="http://server.cdt.com" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://server.cdt.com" version="1.0">
+			<xs:element name="Exception" type="tns:Exception" />
+			<xs:element name="syncWriteVehicleInfo" type="tns:syncWriteVehicleInfo" />
+			<xs:element name="syncWriteVehicleInfoResponse" type="tns:syncWriteVehicleInfoResponse" />
+			<xs:element name="writeVehicleInfo" type="tns:writeVehicleInfo" />
+			<xs:element name="writeVehicleInfoResponse" type="tns:writeVehicleInfoResponse" />
+			<xs:element name="login" type="tns:login" />
+			<xs:element name="loginResponse" type="tns:loginResponse" />
+			<xs:element name="queryLimitSpeed" type="tns:queryLimitSpeed" />
+			<xs:element name="queryLimitSpeedResponse" type="tns:queryLimitSpeedResponse" />
+			<xs:element name="queryViolateSpeed" type="tns:queryViolateSpeed" />
+			<xs:element name="queryViolateSpeedResponse" type="tns:queryViolateSpeedResponse" />
+			<xs:element name="logout" type="tns:logout" />
+			<xs:element name="logoutResponse" type="tns:logoutResponse" />
+			<xs:element name="querySyncTime" type="tns:querySyncTime" />
+			<xs:element name="querySyncTimeResponse" type="tns:querySyncTimeResponse" />
+			<xs:element name="writeAlarmInfo" type="tns:writeAlarmInfo" />
+			<xs:element name="writeAlarmInfoResponse" type="tns:writeAlarmInfoResponse" />
+			<xs:element name="NWriteVehicleInfo" type="tns:NWriteVehicleInfo" />
+			<xs:element name="NWriteVehicleInfoEx" type="tns:NWriteVehicleInfoEx" />
+			<xs:element name="NWriteVehicleInfoExResponse" type="tns:NWriteVehicleInfoExResponse" />
+			<xs:element name="NWriteVehicleInfoResponse" type="tns:NWriteVehicleInfoResponse" />
+			<xs:element name="NSyncWriteVehicleInfo" type="tns:NSyncWriteVehicleInfo" />
+			<xs:element name="NSyncWriteVehicleInfoResponse" type="tns:NSyncWriteVehicleInfoResponse" />
+			<xs:element name="WriteFlux" type="tns:WriteFlux" />
+			<xs:element name="WriteFluxResponse" type="tns:WriteFluxResponse" />
+			<xs:element name="NWriteDeviceStatus" type="tns:NWriteDeviceStatus" />
+			<xs:element name="NWriteDeviceStatusResponse" type="tns:NWriteDeviceStatusResponse" />
+			<xs:element name="NSyncWriteMobileEPVInfo" type="tns:NSyncWriteMobileEPVInfo" />
+			<xs:element name="NSyncWriteMobileEPVInfoResponse" type="tns:NSyncWriteMobileEPVInfoResponse" />
+			<xs:element name="NSyncWriteVioInfo" type="tns:NSyncWriteVioInfo" />
+			<xs:element name="NSyncWriteVioInfoResponse" type="tns:NSyncWriteVioInfoResponse" />
+			<xs:element name="NWritePassStat" type="tns:NWritePassStat" />
+			<xs:element name="NWritePassStatResponse" type="tns:NWritePassStatResponse" />
+			<xs:element name="SyncWriteVehPassInfo" type="tns:SyncWriteVehPassInfo" />
+			<xs:element name="SyncWriteVehPassInfoResponse" type="tns:SyncWriteVehPassInfoResponse" />
+			<xs:element name="WriteVehPassInfo" type="tns:WriteVehPassInfo" />
+			<xs:element name="WriteVehPassInfoResponse" type="tns:WriteVehPassInfoResponse" />
+			<xs:element name="SyncWriteAreaSpeed" type="tns:SyncWriteAreaSpeed" />
+			<xs:element name="SyncWriteAreaSpeedResponse" type="tns:SyncWriteAreaSpeedResponse" />
+			<xs:element name="WriteAreaSpeed" type="tns:WriteAreaSpeed" />
+			<xs:element name="WriteAreaSpeedResponse" type="tns:WriteAreaSpeedResponse" />
+			<xs:complexType name="Exception">
+				<xs:sequence>
+					<xs:element name="message" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="syncWriteVehicleInfo">
+				<xs:sequence>
+					<xs:element name="sid" type="xs:string" />
+					<xs:element name="strDeviceId" type="xs:string" />
+					<xs:element name="strVehicleId" type="xs:string" />
+					<xs:element name="strDeviceType" type="xs:string" />
+					<xs:element name="strDirectionId" type="xs:string" />
+					<xs:element name="strDriveWayId" type="xs:string" />
+					<xs:element name="strLicense" type="xs:string" />
+					<xs:element name="strLicenseType" type="xs:string" />
+					<xs:element name="strPassDateTime" type="xs:string" />
+					<xs:element name="strRedLightBeginTime" type="xs:string" />
+					<xs:element name="strRedLightLast" type="xs:string" />
+					<xs:element name="lSpeed" type="xs:long" />
+					<xs:element name="lLargeLimitSpeed" type="xs:long" />
+					<xs:element name="lMiniLimitSpeed" type="xs:long" />
+					<xs:element name="strViolationType" type="xs:string" />
+					<xs:element name="strViolationType2" type="xs:string" />
+					<xs:element name="lCarLength" type="xs:long" />
+					<xs:element name="strLicenseColor" type="xs:string" />
+					<xs:element name="strCarType" type="xs:string" />
+					<xs:element name="strPicLocalPath1" type="xs:base64Binary" />
+					<xs:element name="strPicLocalPath2" type="xs:base64Binary" />
+					<xs:element name="strPicLocalPath3" type="xs:base64Binary" />
+					<xs:element name="strPicLocalPath4" type="xs:base64Binary" />
+					<xs:element name="strPicLocalPath5" type="xs:base64Binary" />
+					<xs:element name="strPicLocalPath6" type="xs:base64Binary" />
+					<xs:element name="strPicLocalPath7" type="xs:base64Binary" />
+					<xs:element name="strPicRemotePath" type="xs:string" />
+					<xs:element name="strViolate" type="xs:string" />
+					<xs:element name="strSendType" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="syncWriteVehicleInfoResponse">
+				<xs:sequence>
+					<xs:element name="return" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="writeVehicleInfo">
+				<xs:sequence>
+					<xs:element name="sid" type="xs:string" />
+					<xs:element name="strDeviceId" type="xs:string" />
+					<xs:element name="strVehicleId" type="xs:string" />
+					<xs:element name="strDeviceType" type="xs:string" />
+					<xs:element name="strDirectionId" type="xs:string" />
+					<xs:element name="strDriveWayId" type="xs:string" />
+					<xs:element name="strLicense" type="xs:string" />
+					<xs:element name="strLicenseType" type="xs:string" />
+					<xs:element name="strPassDateTime" type="xs:string" />
+					<xs:element name="strRedLightBeginTime" type="xs:string" />
+					<xs:element name="strRedLightLast" type="xs:string" />
+					<xs:element name="lSpeed" type="xs:long" />
+					<xs:element name="lLargeLimitSpeed" type="xs:long" />
+					<xs:element name="lMiniLimitSpeed" type="xs:long" />
+					<xs:element name="strViolationType" type="xs:string" />
+					<xs:element name="strViolationType2" type="xs:string" />
+					<xs:element name="lCarLength" type="xs:long" />
+					<xs:element name="strLicenseColor" type="xs:string" />
+					<xs:element name="strCarType" type="xs:string" />
+					<xs:element name="strPicLocalPath1" type="xs:string" />
+					<xs:element name="strPicLocalPath2" type="xs:string" />
+					<xs:element name="strPicLocalPath3" type="xs:string" />
+					<xs:element name="strPicLocalPath4" type="xs:string" />
+					<xs:element name="strPicLocalPath5" type="xs:string" />
+					<xs:element name="strPicLocalPath6" type="xs:string" />
+					<xs:element name="strPicLocalPath7" type="xs:string" />
+					<xs:element name="strPicRemotePath" type="xs:string" />
+					<xs:element name="strViolate" type="xs:string" />
+					<xs:element name="strSendType" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="writeVehicleInfoResponse">
+				<xs:sequence>
+					<xs:element name="return" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="login">
+				<xs:sequence>
+					<xs:element name="strDeviceId" type="xs:string" />
+					<xs:element name="strDeviceKey" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="loginResponse">
+				<xs:sequence>
+					<xs:element name="return" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="queryLimitSpeed">
+				<xs:sequence>
+					<xs:element name="sid" type="xs:string" />
+					<xs:element name="strDeviceId" type="xs:string" />
+					<xs:element name="strDirectId" type="xs:string" />
+					<xs:element name="strCarType" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="queryLimitSpeedResponse">
+				<xs:sequence>
+					<xs:element name="return" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="queryViolateSpeed">
+				<xs:sequence>
+					<xs:element name="sid" type="xs:string" />
+					<xs:element name="strDeviceId" type="xs:string" />
+					<xs:element name="strDirectId" type="xs:string" />
+					<xs:element name="strCarType" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="queryViolateSpeedResponse">
+				<xs:sequence>
+					<xs:element name="return" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="logout">
+				<xs:sequence>
+					<xs:element name="sid" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="logoutResponse">
+				<xs:sequence>
+					<xs:element name="return" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="querySyncTime">
+				<xs:sequence>
+					<xs:element name="sid" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="querySyncTimeResponse">
+				<xs:sequence>
+					<xs:element name="return" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="writeAlarmInfo">
+				<xs:sequence>
+					<xs:element name="sid" type="xs:string" />
+					<xs:element name="strDeviceId" type="xs:string" />			
+					<xs:element name="strDirectionId" type="xs:string" />			
+					<xs:element name="strDircName" type="xs:string" />
+					<xs:element name="strLicense" type="xs:string" />
+					<xs:element name="strLicenseType" type="xs:string" />
+					<xs:element name="strPassDateTime" type="xs:string" />			
+					<xs:element name="strPicLocalPath1" type="xs:string" />
+					<xs:element name="strPicLocalPath2" type="xs:string" />
+					<xs:element name="strPicLocalPath3" type="xs:string" />
+					<xs:element name="strPicLocalPath4" type="xs:string" />
+					<xs:element name="strPicLocalPath5" type="xs:string" />
+					<xs:element name="strPicLocalPath6" type="xs:string" />
+					<xs:element name="strPicLocalPath7" type="xs:string" />
+					<xs:element name="strAlarmDateTime" type="xs:string" />
+					<xs:element name="strBriefCaseDescript" type="xs:string" />
+					<xs:element name="strSuspType" type="xs:string" />
+					<xs:element name="strSuspNo" type="xs:string" />
+					<xs:element name="strAlarmLevel" type="xs:string" />
+					<xs:element name="strPlaceId" type="xs:string" />
+					<xs:element name="strPlaceName" type="xs:string" />
+					<xs:element name="strReserve1" type="xs:string" />
+					<xs:element name="strReserve2" type="xs:string" />
+					<xs:element name="strReserve3" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="writeAlarmInfoResponse">
+				<xs:sequence>
+					<xs:element name="return" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="NWriteVehicleInfo">
+				<xs:sequence>
+					<xs:element name="sid" type="xs:string" />
+					<xs:element name="strDeviceId" type="xs:string" />
+					<xs:element name="strVehicleId" type="xs:string" />
+					<xs:element name="strDeviceType" type="xs:string" />
+					<xs:element name="strDirectionId" type="xs:string" />
+					<xs:element name="strDriveWayId" type="xs:string" />
+					<xs:element name="strLicense" type="xs:string" />
+					<xs:element name="strLicenseType" type="xs:string" />
+					<xs:element name="strPassDateTime" type="xs:string" />
+					<xs:element name="strRedLightBeginTime" type="xs:string" />
+					<xs:element name="strRedLightLast" type="xs:string" />
+					<xs:element name="lSpeed" type="xs:long" />
+					<xs:element name="lLargeLimitSpeed" type="xs:long" />
+					<xs:element name="lMiniLimitSpeed" type="xs:long" />
+					<xs:element name="strViolationType" type="xs:string" />
+					<xs:element name="strViolationType2" type="xs:string" />
+					<xs:element name="lCarLength" type="xs:long" />
+					<xs:element name="strLicenseColor" type="xs:string" />
+					<xs:element name="strCarType" type="xs:string" />
+					<xs:element name="strPicLocalPath1" type="xs:string" />
+					<xs:element name="strPicLocalPath2" type="xs:string" />
+					<xs:element name="strPicLocalPath3" type="xs:string" />
+					<xs:element name="strPicLocalPath4" type="xs:string" />
+					<xs:element name="strPicLocalPath5" type="xs:string" />
+					<xs:element name="strPicLocalPath6" type="xs:string" />
+					<xs:element name="strPicLocalPath7" type="xs:string" />
+					<xs:element name="strPicRemotePath" type="xs:string" />
+					<xs:element name="strViolate" type="xs:string" />
+					<xs:element name="strSendType" type="xs:string" />
+					<xs:element name="strCarColor" type="xs:string" />
+					<xs:element name="strReserve1" type="xs:string" />
+					<xs:element name="strReserve2" type="xs:string" />
+					<xs:element name="strReserve3" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="NWriteVehicleInfoResponse">
+				<xs:sequence>
+					<xs:element name="return" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="NWriteVehicleInfoEx">
+				<xs:sequence>
+					<xs:element name="sid" type="xs:string" />
+					<xs:element name="strDeviceId" type="xs:string" />
+					<xs:element name="strVehicleId" type="xs:string" />
+					<xs:element name="strDeviceType" type="xs:string" />
+					<xs:element name="strDirectionId" type="xs:string" />
+					<xs:element name="strDriveWayId" type="xs:string" />
+					<xs:element name="strLicense" type="xs:string" />
+					<xs:element name="strLicenseType" type="xs:string" />
+					<xs:element name="strPassDateTime" type="xs:string" />
+					<xs:element name="strRedLightBeginTime" type="xs:string" />
+					<xs:element name="strRedLightLast" type="xs:string" />
+					<xs:element name="lSpeed" type="xs:long" />
+					<xs:element name="lLargeLimitSpeed" type="xs:long" />
+					<xs:element name="lMiniLimitSpeed" type="xs:long" />
+					<xs:element name="strViolationType" type="xs:string" />
+					<xs:element name="strViolationType2" type="xs:string" />
+					<xs:element name="lCarLength" type="xs:long" />
+					<xs:element name="strLicenseColor" type="xs:string" />
+					<xs:element name="strCarType" type="xs:string" />
+					<xs:element name="strPicLocalPath1" type="xs:string" />
+					<xs:element name="strPicLocalPath2" type="xs:string" />
+					<xs:element name="strPicLocalPath3" type="xs:string" />
+					<xs:element name="strPicLocalPath4" type="xs:string" />
+					<xs:element name="strPicLocalPath5" type="xs:string" />
+					<xs:element name="strPicLocalPath6" type="xs:base64Binary" />
+					<xs:element name="strPicLocalPath7" type="xs:string" />
+					<xs:element name="strPicRemotePath" type="xs:string" />
+					<xs:element name="strViolate" type="xs:string" />
+					<xs:element name="strSendType" type="xs:string" />
+					<xs:element name="strCarColor" type="xs:string" />
+					<xs:element name="strReserve1" type="xs:string" />
+					<xs:element name="strReserve2" type="xs:string" />
+					<xs:element name="strReserve3" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="NWriteVehicleInfoExResponse">
+				<xs:sequence>
+					<xs:element name="return" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="NSyncWriteVehicleInfo">
+				<xs:sequence>
+					<xs:element name="sid" type="xs:string" />
+					<xs:element name="strDeviceId" type="xs:string" />
+					<xs:element name="strVehicleId" type="xs:string" />
+					<xs:element name="strDeviceType" type="xs:string" />
+					<xs:element name="strDirectionId" type="xs:string" />
+					<xs:element name="strDriveWayId" type="xs:string" />
+					<xs:element name="strLicense" type="xs:string" />
+					<xs:element name="strLicenseType" type="xs:string" />
+					<xs:element name="strPassDateTime" type="xs:string" />
+					<xs:element name="strRedLightBeginTime" type="xs:string" />
+					<xs:element name="strRedLightLast" type="xs:string" />
+					<xs:element name="lSpeed" type="xs:long" />
+					<xs:element name="lLargeLimitSpeed" type="xs:long" />
+					<xs:element name="lMiniLimitSpeed" type="xs:long" />
+					<xs:element name="strViolationType" type="xs:string" />
+					<xs:element name="strViolationType2" type="xs:string" />
+					<xs:element name="lCarLength" type="xs:long" />
+					<xs:element name="strLicenseColor" type="xs:string" />
+					<xs:element name="strCarType" type="xs:string" />
+					<xs:element name="strPicLocalPath1" type="xs:base64Binary" />
+					<xs:element name="strPicLocalPath2" type="xs:base64Binary" />
+					<xs:element name="strPicLocalPath3" type="xs:base64Binary" />
+					<xs:element name="strPicLocalPath4" type="xs:base64Binary" />
+					<xs:element name="strPicLocalPath5" type="xs:base64Binary" />
+					<xs:element name="strPicLocalPath6" type="xs:base64Binary" />
+					<xs:element name="strPicLocalPath7" type="xs:base64Binary" />
+					<xs:element name="strPicRemotePath" type="xs:string" />
+					<xs:element name="strViolate" type="xs:string" />
+					<xs:element name="strSendType" type="xs:string" />
+					<xs:element name="strCarColor" type="xs:string" />
+					<xs:element name="strReserve1" type="xs:string" />
+					<xs:element name="strReserve2" type="xs:string" />
+					<xs:element name="strReserve3" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="NSyncWriteVehicleInfoResponse">
+				<xs:sequence>
+					<xs:element name="return" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="WriteFlux">
+				<xs:sequence>
+					<xs:element name="sid" type="xs:string" />
+					<xs:element name="lpszDeviceId" type="xs:string" />
+					<xs:element name="lpszDiretId" type="xs:string" />
+					<xs:element name="lpszDriveWay" type="xs:string" />
+					<xs:element name="lpszPeriodBegin" type="xs:string" />
+					<xs:element name="lpszPeriodEnd" type="xs:string" />
+					<xs:element name="lFlux" type="xs:long" />
+					<xs:element name="lpszReserve1" type="xs:string" />
+					<xs:element name="lpszReserve2" type="xs:string" />
+					<xs:element name="lpszReserve3" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="WriteFluxResponse">
+				<xs:sequence>
+					<xs:element name="return" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="NWriteDeviceStatus">
+				<xs:sequence>
+					<xs:element name="sid" type="xs:string" />
+					<xs:element name="strDeviceId" type="xs:string" />
+					<xs:element name="strVehDetectorStatus" type="xs:string" />
+					<xs:element name="strVideoDeviceStatus" type="xs:string" />
+					<xs:element name="strGatherCardStatus" type="xs:string" />
+					<xs:element name="strTemperature" type="xs:string" />
+					<xs:element name="strReserveOne" type="xs:string" />
+					<xs:element name="strReserveTwo" type="xs:string" />
+					<xs:element name="strReserveThree" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="NWriteDeviceStatusResponse">
+				<xs:sequence>
+					<xs:element name="return" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="NSyncWriteMobileEPVInfo">
+				<xs:sequence>
+					<xs:element name="sid" type="xs:string" />
+					<xs:element name="strDeviceId" type="xs:string" />
+					<xs:element name="strVehicleId" type="xs:string" />
+					<xs:element name="strDeviceType" type="xs:string" />
+					<xs:element name="strDirectionId" type="xs:string" />
+					<xs:element name="strDriveWayId" type="xs:string" />
+					<xs:element name="strLicense" type="xs:string" />
+					<xs:element name="strLicenseType" type="xs:string" />
+					<xs:element name="strPassDateTime" type="xs:string" />
+					<xs:element name="strRedLightBeginTime" type="xs:string" />
+					<xs:element name="strRedLightLast" type="xs:string" />
+					<xs:element name="lSpeed" type="xs:long" />
+					<xs:element name="lLargeLimitSpeed" type="xs:long" />
+					<xs:element name="lMiniLimitSpeed" type="xs:long" />
+					<xs:element name="strViolationType" type="xs:string" />
+					<xs:element name="strViolationType2" type="xs:string" />
+					<xs:element name="lCarLength" type="xs:long" />
+					<xs:element name="strLicenseColor" type="xs:string" />
+					<xs:element name="strCarType" type="xs:string" />
+					<xs:element name="strPicLocalPath1" type="xs:base64Binary" />
+					<xs:element name="strPicLocalPath2" type="xs:base64Binary" />
+					<xs:element name="strPicLocalPath3" type="xs:base64Binary" />
+					<xs:element name="strPicLocalPath4" type="xs:base64Binary" />
+					<xs:element name="strPicLocalPath5" type="xs:base64Binary" />
+					<xs:element name="strPicLocalPath6" type="xs:base64Binary" />
+					<xs:element name="strPicLocalPath7" type="xs:base64Binary" />
+					<xs:element name="strPicRemotePath" type="xs:string" />
+					<xs:element name="strViolate" type="xs:string" />
+					<xs:element name="strSendType" type="xs:string" />
+					<xs:element name="strVioPlaceId" type="xs:string" />
+					<xs:element name="strVioPlaceName" type="xs:string" />
+					<xs:element name="strCollectDept" type="xs:string" />
+					<xs:element name="strDataSrc" type="xs:string" />
+					<xs:element name="lRoadKLMS" type="xs:long" />
+					<xs:element name="lRoadMs" type="xs:long" />		
+					<xs:element name="strCarColor" type="xs:string" />
+					<xs:element name="strReserve1" type="xs:string" />
+					<xs:element name="strReserve2" type="xs:string" />
+					<xs:element name="strReserve3" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="NSyncWriteMobileEPVInfoResponse">
+				<xs:sequence>
+					<xs:element name="return" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="NSyncWriteVioInfo">
+				<xs:sequence>
+					<xs:element name="sid" type="xs:string" />
+					<xs:element name="strDeviceId" type="xs:string" />
+					<xs:element name="strVehicleId" type="xs:string" />
+					<xs:element name="strDeviceType" type="xs:string" />
+					<xs:element name="strDirectionId" type="xs:string" />
+					<xs:element name="strDriveWayId" type="xs:string" />
+					<xs:element name="strLicense" type="xs:string" />
+					<xs:element name="strLicenseType" type="xs:string" />
+					<xs:element name="strPassDateTime" type="xs:string" />
+					<xs:element name="strRedLightBeginTime" type="xs:string" />
+					<xs:element name="strRedLightLast" type="xs:string" />
+					<xs:element name="lSpeed" type="xs:long" />
+					<xs:element name="lLargeLimitSpeed" type="xs:long" />
+					<xs:element name="lMiniLimitSpeed" type="xs:long" />
+					<xs:element name="strViolationType" type="xs:string" />
+					<xs:element name="strViolationType2" type="xs:string" />
+					<xs:element name="lCarLength" type="xs:long" />
+					<xs:element name="strLicenseColor" type="xs:string" />
+					<xs:element name="strCarType" type="xs:string" />
+					<xs:element name="strPicLocalPath1" type="xs:base64Binary" />
+					<xs:element name="strPicLocalPath2" type="xs:base64Binary" />
+					<xs:element name="strPicLocalPath3" type="xs:base64Binary" />
+					<xs:element name="strPicLocalPath4" type="xs:base64Binary" />
+					<xs:element name="strPicLocalPath5" type="xs:base64Binary" />
+					<xs:element name="strPicLocalPath6" type="xs:base64Binary" />
+					<xs:element name="strPicLocalPath7" type="xs:base64Binary" />
+					<xs:element name="strPicRemotePath" type="xs:string" />
+					<xs:element name="strViolate" type="xs:string" />
+					<xs:element name="strSendType" type="xs:string" />
+					<xs:element name="strVioPlaceId" type="xs:string" />
+					<xs:element name="strVioPlaceName" type="xs:string" />
+					<xs:element name="strCollectDept" type="xs:string" />
+					<xs:element name="strDataSrc" type="xs:string" />
+					<xs:element name="lRoadKLMS" type="xs:long" />
+					<xs:element name="lRoadMs" type="xs:long" />		
+					<xs:element name="strCarColor" type="xs:string" />
+					<xs:element name="strPassDateTime2" type="xs:string" />
+					<xs:element name="strVioPlaceId2" type="xs:string" />
+					<xs:element name="strVioPlaceName2" type="xs:string" />
+					<xs:element name="strReserve1" type="xs:string" />
+					<xs:element name="strReserve2" type="xs:string" />
+					<xs:element name="strReserve3" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="NSyncWriteVioInfoResponse">
+				<xs:sequence>
+					<xs:element name="return" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="NWritePassStat">
+				<xs:sequence>
+					<xs:element name="sid" type="xs:string" />
+					<xs:element name="strDeviceId" type="xs:string" />
+					<xs:element name="strDeviceType" type="xs:string" />
+					<xs:element name="strDirectionId" type="xs:string" />
+					<xs:element name="strDriveWayId" type="xs:string" />
+					<xs:element name="strPassStatTime" type="xs:string" />
+					<xs:element name="lPassCount" type="xs:long" />
+					<xs:element name="lSuccessCount" type="xs:long" />
+					<xs:element name="lTimelyCount" type="xs:long" />
+					<xs:element name="strReserve1" type="xs:string" />
+					<xs:element name="strReserve2" type="xs:string" />
+					<xs:element name="strReserve3" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="NWritePassStatResponse">
+				<xs:sequence>
+					<xs:element name="return" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="SyncWriteVehPassInfo">
+				<xs:sequence>
+					<xs:element name="sid" type="xs:string" />
+					<xs:element name="xmlParam" type="xs:string" />
+					<xs:element name="pic1" type="xs:base64Binary" />
+					<xs:element name="pic2" type="xs:base64Binary" />
+					<xs:element name="pic3" type="xs:base64Binary" />
+					<xs:element name="pic4" type="xs:base64Binary" />
+					<xs:element name="pic5" type="xs:base64Binary" />
+					<xs:element name="pic6" type="xs:base64Binary" />
+					<xs:element name="video" type="xs:base64Binary" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="SyncWriteVehPassInfoResponse">
+				<xs:sequence>
+					<xs:element name="return" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="WriteVehPassInfo">
+				<xs:sequence>
+					<xs:element name="sid" type="xs:string" />
+					<xs:element name="xmlParam" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="WriteVehPassInfoResponse">
+				<xs:sequence>
+					<xs:element name="return" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="SyncWriteAreaSpeed">
+				<xs:sequence>
+					<xs:element name="sid" type="xs:string" />
+					<xs:element name="xmlParam" type="xs:string" />
+					<xs:element name="pic1" type="xs:base64Binary" />
+					<xs:element name="pic2" type="xs:base64Binary" />
+					<xs:element name="pic3" type="xs:base64Binary" />
+					<xs:element name="pic4" type="xs:base64Binary" />
+					<xs:element name="pic5" type="xs:base64Binary" />
+					<xs:element name="pic6" type="xs:base64Binary" />
+					<xs:element name="video" type="xs:base64Binary" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="SyncWriteAreaSpeedResponse">
+				<xs:sequence>
+					<xs:element name="return" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="WriteAreaSpeed">
+				<xs:sequence>
+					<xs:element name="sid" type="xs:string" />
+					<xs:element name="xmlParam" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="WriteAreaSpeedResponse">
+				<xs:sequence>
+					<xs:element name="return" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</types>
+	<message name="syncWriteVehicleInfo">
+		<part name="parameters" element="tns:syncWriteVehicleInfo" />
+	</message>
+	<message name="syncWriteVehicleInfoResponse">
+		<part name="parameters" element="tns:syncWriteVehicleInfoResponse" />
+	</message>
+	<message name="writeVehicleInfo">
+		<part name="parameters" element="tns:writeVehicleInfo" />
+	</message>
+	<message name="writeVehicleInfoResponse">
+		<part name="parameters" element="tns:writeVehicleInfoResponse" />
+	</message>
+	<message name="login">
+		<part name="parameters" element="tns:login" />
+	</message>
+	<message name="loginResponse">
+		<part name="parameters" element="tns:loginResponse" />
+	</message>
+	<message name="queryLimitSpeed">
+		<part name="parameters" element="tns:queryLimitSpeed" />
+	</message>
+	<message name="queryLimitSpeedResponse">
+		<part name="parameters" element="tns:queryLimitSpeedResponse" />
+	</message>
+	<message name="queryViolateSpeed">
+		<part name="parameters" element="tns:queryViolateSpeed" />
+	</message>
+	<message name="queryViolateSpeedResponse">
+		<part name="parameters" element="tns:queryViolateSpeedResponse" />
+	</message>
+	<message name="logout">
+		<part name="parameters" element="tns:logout" />
+	</message>
+	<message name="logoutResponse">
+		<part name="parameters" element="tns:logoutResponse" />
+	</message>
+	<message name="querySyncTime">
+		<part name="parameters" element="tns:querySyncTime" />
+	</message>
+	<message name="querySyncTimeResponse">
+		<part name="parameters" element="tns:querySyncTimeResponse" />
+	</message>
+	<message name="writeAlarmInfo">
+		<part name="parameters" element="tns:writeAlarmInfo" />
+	</message>
+	<message name="writeAlarmInfoResponse">
+		<part name="parameters" element="tns:writeAlarmInfoResponse" />
+	</message>
+	<message name="NWriteVehicleInfo">
+		<part name="parameters" element="tns:NWriteVehicleInfo" />
+	</message>
+	<message name="NWriteVehicleInfoResponse">
+		<part name="parameters" element="tns:NWriteVehicleInfoResponse" />
+	</message>
+	<message name="NWriteVehicleInfoEx">
+		<part name="parameters" element="tns:NWriteVehicleInfoEx" />
+	</message>
+	<message name="NWriteVehicleInfoExResponse">
+		<part name="parameters" element="tns:NWriteVehicleInfoExResponse" />
+	</message>
+	<message name="NSyncWriteVehicleInfo">
+		<part name="parameters" element="tns:NSyncWriteVehicleInfo" />
+	</message>
+	<message name="NSyncWriteVehicleInfoResponse">
+		<part name="parameters" element="tns:NSyncWriteVehicleInfoResponse" />
+	</message>
+	<message name="WriteFlux">
+		<part name="parameters" element="tns:WriteFlux" />
+	</message>
+	<message name="WriteFluxResponse">
+		<part name="parameters" element="tns:WriteFluxResponse" />
+	</message>
+	<message name="NWriteDeviceStatus">
+		<part name="parameters" element="tns:NWriteDeviceStatus" />
+	</message>
+	<message name="NWriteDeviceStatusResponse">
+		<part name="parameters" element="tns:NWriteDeviceStatusResponse" />
+	</message>
+	<message name="NSyncWriteMobileEPVInfo">
+		<part name="parameters" element="tns:NSyncWriteMobileEPVInfo" />
+	</message>
+	<message name="NSyncWriteMobileEPVInfoResponse">
+		<part name="parameters" element="tns:NSyncWriteMobileEPVInfoResponse" />
+	</message>
+	<message name="NSyncWriteVioInfo">
+		<part name="parameters" element="tns:NSyncWriteVioInfo" />
+	</message>
+	<message name="NSyncWriteVioInfoResponse">
+		<part name="parameters" element="tns:NSyncWriteVioInfoResponse" />
+	</message>
+	<message name="NWritePassStat">
+		<part name="parameters" element="tns:NWritePassStat" />
+	</message>
+	<message name="NWritePassStatResponse">
+		<part name="parameters" element="tns:NWritePassStatResponse" />
+	</message>
+	<message name="SyncWriteVehPassInfo">
+		<part name="parameters" element="tns:SyncWriteVehPassInfo" />
+	</message>
+	<message name="SyncWriteVehPassInfoResponse">
+		<part name="parameters" element="tns:SyncWriteVehPassInfoResponse" />
+	</message>
+	<message name="WriteVehPassInfo">
+		<part name="parameters" element="tns:WriteVehPassInfo" />
+	</message>
+	<message name="WriteVehPassInfoResponse">
+		<part name="parameters" element="tns:WriteVehPassInfoResponse" />
+	</message>
+	<message name="SyncWriteAreaSpeed">
+		<part name="parameters" element="tns:SyncWriteAreaSpeed" />
+	</message>
+	<message name="SyncWriteAreaSpeedResponse">
+		<part name="parameters" element="tns:SyncWriteAreaSpeedResponse" />
+	</message>
+	<message name="WriteAreaSpeed">
+		<part name="parameters" element="tns:WriteAreaSpeed" />
+	</message>
+	<message name="WriteAreaSpeedResponse">
+		<part name="parameters" element="tns:WriteAreaSpeedResponse" />
+	</message>
+	<portType name="HTSAPServer">
+		<operation name="syncWriteVehicleInfo">
+			<input message="tns:syncWriteVehicleInfo" />
+			<output message="tns:syncWriteVehicleInfoResponse" />
+		</operation>
+		<operation name="writeVehicleInfo">
+			<input message="tns:writeVehicleInfo" />
+			<output message="tns:writeVehicleInfoResponse" />
+		</operation>
+		<operation name="login">
+			<input message="tns:login" />
+			<output message="tns:loginResponse" />
+		</operation>
+		<operation name="queryLimitSpeed">
+			<input message="tns:queryLimitSpeed" />
+			<output message="tns:queryLimitSpeedResponse" />
+		</operation>
+		<operation name="queryViolateSpeed">
+			<input message="tns:queryViolateSpeed"></input>
+			<output message="tns:queryViolateSpeedResponse"></output>
+		</operation>
+		<operation name="logout">
+			<input message="tns:logout" />
+			<output message="tns:logoutResponse" />
+		</operation>
+		<operation name="querySyncTime">
+			<input message="tns:querySyncTime" />
+			<output message="tns:querySyncTimeResponse" />
+		</operation>
+		<operation name="writeAlarmInfo">
+			<input message="tns:writeAlarmInfo" />
+			<output message="tns:writeAlarmInfoResponse" />
+		</operation>
+		<operation name="NWriteVehicleInfo">
+			<input message="tns:NWriteVehicleInfo" />
+			<output message="tns:NWriteVehicleInfoResponse" />
+		</operation>
+		<operation name="NWriteVehicleInfoEx">
+			<input message="tns:NWriteVehicleInfoEx" />
+			<output message="tns:NWriteVehicleInfoExResponse" />
+		</operation>
+		<operation name="NSyncWriteVehicleInfo">
+			<input message="tns:NSyncWriteVehicleInfo" />
+			<output message="tns:NSyncWriteVehicleInfoResponse" />
+		</operation>
+		<operation name="WriteFlux">
+			<input message="tns:WriteFlux" />
+			<output message="tns:WriteFluxResponse" />
+		</operation>
+		<operation name="NWriteDeviceStatus">
+			<input message="tns:NWriteDeviceStatus" />
+			<output message="tns:NWriteDeviceStatusResponse" />
+		</operation>
+		<operation name="NSyncWriteMobileEPVInfo">
+			<input message="tns:NSyncWriteMobileEPVInfo" />
+			<output message="tns:NSyncWriteMobileEPVInfoResponse" />
+		</operation>
+		<operation name="NSyncWriteVioInfo">
+			<input message="tns:NSyncWriteVioInfo" />
+			<output message="tns:NSyncWriteVioInfoResponse" />
+		</operation>
+		<operation name="NWritePassStat">
+			<input message="tns:NWritePassStat" />
+			<output message="tns:NWritePassStatResponse" />
+		</operation>
+		<operation name="SyncWriteVehPassInfo">
+			<input message="tns:SyncWriteVehPassInfo" />
+			<output message="tns:SyncWriteVehPassInfoResponse" />
+		</operation>
+		<operation name="WriteVehPassInfo">
+			<input message="tns:WriteVehPassInfo" />
+			<output message="tns:WriteVehPassInfoResponse" />
+		</operation>
+		<operation name="SyncWriteAreaSpeed">
+			<input message="tns:SyncWriteAreaSpeed" />
+			<output message="tns:SyncWriteAreaSpeedResponse" />
+		</operation>
+		<operation name="WriteAreaSpeed">
+			<input message="tns:WriteAreaSpeed" />
+			<output message="tns:WriteAreaSpeedResponse" />
+		</operation>
+	</portType>
+	<binding name="HTSAPServerSoapBinding" type="tns:HTSAPServer">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="syncWriteVehicleInfo">
+			<soap:operation soapAction="action" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="writeVehicleInfo">
+			<soap:operation soapAction="action" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="login">
+			<soap:operation soapAction="action" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="queryLimitSpeed">
+			<soap:operation soapAction="action" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="queryViolateSpeed">
+			<soap:operation soapAction="action" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="logout">
+			<soap:operation soapAction="action" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="querySyncTime">
+			<soap:operation soapAction="action" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="writeAlarmInfo">
+			<soap:operation soapAction="action" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="NWriteVehicleInfo">
+			<soap:operation soapAction="action" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="NWriteVehicleInfoEx">
+			<soap:operation soapAction="action" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="NSyncWriteVehicleInfo">
+			<soap:operation soapAction="action" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="WriteFlux">
+			<soap:operation soapAction="action" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="NWriteDeviceStatus">
+			<soap:operation soapAction="action" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="NSyncWriteMobileEPVInfo">
+			<soap:operation soapAction="action" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="NSyncWriteVioInfo">
+			<soap:operation soapAction="action" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="NWritePassStat">
+			<soap:operation soapAction="action" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="SyncWriteVehPassInfo">
+			<soap:operation soapAction="action" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="WriteVehPassInfo">
+			<soap:operation soapAction="action" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="SyncWriteAreaSpeed">
+			<soap:operation soapAction="action" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="WriteAreaSpeed">
+			<soap:operation soapAction="action" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<service name="HTSAPServerService">
+		<port name="HTSAPServer" binding="tns:HTSAPServerSoapBinding">
+			<soap:address
+				location="http://192.168.0.21:7081/HTServer/services/HTSAPServer" />
+		</port>
+	</service>
+</definitions>
